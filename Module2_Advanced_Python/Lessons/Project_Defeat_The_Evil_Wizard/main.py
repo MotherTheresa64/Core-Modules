@@ -1,27 +1,4 @@
-from custom_classes import Warrior, Mage, Archer, Paladin, EvilWizard
-from game_actions import use_special, use_defense
-
-def create_character():
-    print("Choose your character class:")
-    print("1. Warrior")
-    print("2. Mage")
-    print("3. Archer")
-    print("4. Paladin")
-
-    choice = input("Enter the number of your class choice: ")
-    name = input("Enter your character's name: ")
-
-    if choice == '1':
-        return Warrior(name)
-    elif choice == '2':
-        return Mage(name)
-    elif choice == '3':
-        return Archer(name)
-    elif choice == '4':
-        return Paladin(name)
-    else:
-        print("Invalid choice. Defaulting to Warrior.")
-        return Warrior(name)
+from game_actions import create_character, EvilWizard
 
 def battle(player, wizard):
     while player.health > 0 and wizard.health > 0:
@@ -29,37 +6,45 @@ def battle(player, wizard):
         print("1. Attack")
         print("2. Use Special Ability")
         print("3. Heal")
-        print("4. Use Defensive Ability")
-        print("5. View Stats")
+        print("4. View Stats")
 
-        action = input("Choose an action: ")
+        choice = input("Choose an action: ")
 
-        if action == '1':
+        if choice == '1':
             player.attack(wizard)
-        elif action == '2':
-            use_special(player, wizard)
-        elif action == '3':
+        elif choice == '2':
+            if hasattr(player, "power_attack"):
+                player.power_attack(wizard)
+            elif hasattr(player, "cast_spell"):
+                player.cast_spell(wizard)
+            elif hasattr(player, "quick_shot"):
+                sub_choice = input("a) Quick Shot\nb) Evade\nChoose: ")
+                if sub_choice == 'a':
+                    player.quick_shot(wizard)
+                else:
+                    player.evade()
+            elif hasattr(player, "holy_strike"):
+                sub_choice = input("a) Holy Strike\nb) Divine Shield\nChoose: ")
+                if sub_choice == 'a':
+                    player.holy_strike(wizard)
+                else:
+                    player.divine_shield()
+        elif choice == '3':
             player.heal()
-        elif action == '4':
-            use_defense(player)
-        elif action == '5':
+        elif choice == '4':
             player.display_stats()
+            print(f"{wizard.name} - Health: {wizard.health}/{wizard.max_health}")
         else:
-            print("Invalid choice.")
+            print("Invalid input.")
 
         if wizard.health > 0:
-            print("\n--- Wizard's Turn ---")
             wizard.regenerate()
-            if hasattr(player, 'shield_active') and player.shield_active:
-                print(f"{player.name}'s Divine Shield blocked the attack!")
-                player.shield_active = False
-            else:
-                wizard.attack(player)
+            wizard.attack(player)
 
-    if player.health <= 0:
-        print(f"{player.name} was defeated by the Evil Wizard!")
-    elif wizard.health <= 0:
-        print(f"{player.name} has defeated the Evil Wizard!")
+        if player.health <= 0:
+            print(f"{player.name} has been defeated by {wizard.name}!")
+        elif wizard.health <= 0:
+            print(f"{player.name} has defeated {wizard.name} and saved the realm!")
 
 def main():
     player = create_character()
