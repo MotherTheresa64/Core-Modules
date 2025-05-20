@@ -1,5 +1,6 @@
-Flask
-Flask-SQLAlchemy
-Flask-Marshmallow
-marshmallow-sqlalchemy
-mysql-connector-python
+Flask==3.1.0
+Flask-SQLAlchemy==3.1.1
+Flask-Marshmallow==0.15.0
+marshmallow==3.21.1
+marshmallow-sqlalchemy==0.29.0
+mysql-connector-python==8.4.0

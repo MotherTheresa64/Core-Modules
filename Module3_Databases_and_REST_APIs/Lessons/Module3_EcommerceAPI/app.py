@@ -1,24 +1,10 @@
-from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_marshmallow import Marshmallow
-from config import SQLALCHEMY_DATABASE_URI, SQLALCHEMY_TRACK_MODIFICATIONS
+from app import create_app
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = SQLALCHEMY_TRACK_MODIFICATIONS
+app = create_app()
 
-db = SQLAlchemy(app)
-ma = Marshmallow(app)
+if __name__ == '__main__':
+    app.run(debug=True)
 
-# Import and register blueprints
-from routes.user_routes import user_bp
-from routes.product_routes import product_bp
-from routes.order_routes import order_bp
+from app.schemas import UserSchema, ProductSchema, OrderSchema
 
-app.register_blueprint(user_bp)
-app.register_blueprint(product_bp)
-app.register_blueprint(order_bp)
-
-with app.app_context():
-    from models import Base
-    Base.metadata.create_all(db.engine)
+print("Schemas loaded:", UserSchema, ProductSchema, OrderSchema)
