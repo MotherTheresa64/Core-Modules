@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+}
+
+.left-column {
+  float: left;
+  width: 50%;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.right-column {
+  float: right;
+  width: 50%;
+  background-color: #ddd;
+  padding: 20px;
+}

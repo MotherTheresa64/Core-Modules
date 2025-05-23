@@ -1,0 +1,110 @@
+<!-- 
+  Project File: html_knowledge_check.html
+  Purpose: Module 4 Knowledge Check – HTML Content
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Module 4 HTML Assignment</title>
+  <style>
+    /* BONUS: Add rounded border to image */
+    .rounded {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Sections -->
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>This is the Module 4 HTML knowledge check assignment page.</p>
+  </section>
+
+  <section id="about">
+    <h2>About This Page</h2>
+    <p>We are testing key HTML concepts like forms, tables, and navigation.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+
+    <!-- Part 1: Contact Form -->
+    <form action="#" method="POST">
+      <label for="name">Name:</label><br />
+      <input type="text" id="name" name="name" placeholder="Enter your name" required><br /><br />
+
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" placeholder="Enter your email" required><br /><br />
+
+      <label for="message">Message:</label><br />
+      <textarea id="message" name="message" rows="4" placeholder="Write your message"></textarea><br /><br />
+
+      <!-- BONUS: Radio buttons for source -->
+      <!-- BONUS -->
+      <p>How did you find us?</p>
+      <input type="radio" id="google" name="source" value="google">
+      <label for="google">Google</label>
+
+      <input type="radio" id="social" name="source" value="social">
+      <label for="social">Social Media</label>
+
+      <input type="radio" id="friend" name="source" value="friend">
+      <label for="friend">Friend</label><br /><br />
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <!-- Part 2: Product Table -->
+  <section>
+    <h2>Product Table</h2>
+    <table border="1">
+      <!-- BONUS: Table header row -->
+      <!-- BONUS -->
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      <tr>
+        <td>Notebook</td>
+        <td>$5.99</td>
+        <td>25</td>
+      </tr>
+      <tr>
+        <td>Pen</td>
+        <td>$1.99</td>
+        <td>100</td>
+      </tr>
+      <tr>
+        <td>Backpack</td>
+        <td>$29.99</td>
+        <td>10</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- Part 4: Images -->
+  <section>
+    <h2>Images</h2>
+    <img src="https://placehold.co/300x200" alt="Placeholder Image"><br /><br />
+    <!-- BONUS: Rounded image -->
+    <!-- BONUS -->
+    <img src="https://placehold.co/300x200" alt="Rounded Image" class="rounded">
+  </section>
+
+</body>
+</html>

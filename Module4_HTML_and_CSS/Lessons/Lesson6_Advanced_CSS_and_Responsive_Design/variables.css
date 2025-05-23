@@ -1,0 +1,12 @@
+:root {
+  --main-color: #3498db;
+  --secondary-color: #2ecc71;
+}
+
+h1 {
+  color: var(--main-color);
+}
+
+p {
+  color: var(--secondary-color);
+}

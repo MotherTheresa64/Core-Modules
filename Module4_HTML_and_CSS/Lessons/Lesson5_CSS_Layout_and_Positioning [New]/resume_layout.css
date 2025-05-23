@@ -1,0 +1,21 @@
+.resume-container {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.left-resume {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.right-resume {
+  flex: 2;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
