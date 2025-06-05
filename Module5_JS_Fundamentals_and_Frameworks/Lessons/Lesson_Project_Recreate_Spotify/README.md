@@ -1,14 +1,27 @@
 # 🎵 Spotify Recreate – Bootstrap & JavaScript Project
+# 🎵 Spotify Recreate – Bootstrap & JavaScript Project
 
+This project is a responsive recreation of a Spotify-inspired webpage, completed as part of **Module 5: JavaScript Fundamentals & Frameworks** for the Coding Temple Software Engineering program. It demonstrates proficiency in Bootstrap layout, components, responsive design, forms, utility classes, and JavaScript fundamentals including DOM manipulation and event handling.
 This project is a responsive recreation of a Spotify-inspired webpage, completed as part of **Module 5: JavaScript Fundamentals & Frameworks** for the Coding Temple Software Engineering program. It demonstrates proficiency in Bootstrap layout, components, responsive design, forms, utility classes, and JavaScript fundamentals including DOM manipulation and event handling.
 
 ---
 
 ## 📁 Project Structure
+## 📁 Project Structure
 
 Lesson_Project_Recreate_Spotify/
 │
+│
 ├── assets/
+│ ├── background.jpg # Hero banner image
+│ ├── user.png # Rounded-circle avatar
+│ ├── spotify-logo-yellow.png # Footer logo
+│ ├── spotify-logo-white.png # Navbar logo
+│
+├── index.html # Main HTML file
+├── styles.css # Custom styling
+├── script.js # JavaScript logic
+└── README.md # Project description
 │ ├── background.jpg # Hero banner image
 │ ├── user.png # Rounded-circle avatar
 │ ├── spotify-logo-yellow.png # Footer logo
@@ -22,6 +35,28 @@ Lesson_Project_Recreate_Spotify/
 
 ---
 
+## 🖥️ Live Preview
+
+Features include:
+- Hero banner and branding
+- Responsive registration form with validation
+- User data table with hardcoded entries
+- Responsive images using `img-fluid` and `rounded-circle`
+- Utility button examples (including responsive visibility)
+- Fully responsive Bootstrap navbar
+
+---
+
+## ✅ Bootstrap Components & Utilities Used
+
+| Feature | Usage |
+|--------|-------|
+| **Navbar** | Responsive `navbar-expand-md`, collapses into hamburger menu |
+| **Form** | Inputs for name, email, password, checkbox, validation classes, `btn-success` submit |
+| **Table** | `table`, `table-striped`, `table-hover`, wrapped in `table-responsive` |
+| **Images** | `img-fluid` hero image and `rounded-circle` avatar |
+| **Buttons** | Utility classes: `d-none d-md-block`, `btn`, `btn-primary`, etc. |
+| **Layout** | Containers, rows, columns using Bootstrap Grid system |
 ## 🖥️ Live Preview
 
 Features include:
@@ -72,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-```
 
 
 
@@ -82,7 +116,6 @@ Bootstrap’s grid system ensures consistent layout across desktop, tablet, and 
 Custom CSS tweaks style and spacing while retaining responsiveness.
 
 Form fields adapt to screen width and table reflows gracefully.
-
 
 
 ## 🚀 How to Run Locally
