@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Basic DOM Manipulation</title>
+</head>
+<body>
+  <h1 id="title">Original Title</h1>
+  <p class="description">This is the original description.</p>
+  <button onclick="changeContent()">Change Content</button>
+
+  <script>
+    function changeContent() {
+      const titleElement = document.getElementById('title');
+      const descriptionElement = document.querySelector('.description');
+
+      titleElement.textContent = 'New Title';
+      descriptionElement.textContent = 'This is the new description.';
+    }
+  </script>
+</body>
+</html>
