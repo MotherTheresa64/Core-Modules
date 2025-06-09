@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+input, button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+img {
+  margin-top: 15px;
+  width: 200px;
+  height: auto;
+}
